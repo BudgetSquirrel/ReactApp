@@ -3,20 +3,22 @@ import VerticalPageSection from '../../components/generic/VerticalPageSection/Ve
 import './Splash.scss';
 import DiagBorder from '../../components/generic/DiagBorder/DiagBorder';
 import Colors from '../../Colors.scss';
+import Header from '../../components/Header/Header';
 
 
 export default function Splash() {
     return (
         <>
+            <Header></Header>
             <VerticalPageSection isColumn={true}>
                 <div class="vert-section__content color-bg__main">
                     <div class="vert-section__column splash__section__content--left">
-                        <h1>
+                        <h1 class="color-txt__main-dark">
                             Budget Squirrel is a budget management tool
                             designed for both control freeks and the
                             laid back.
                         </h1>
-                        <p>
+                        <p class="color-txt__main-dark">
                             A budget management tool designed for both
                             control freeks and the laid back.
                         </p>
@@ -25,7 +27,7 @@ export default function Splash() {
                         <img class="promo__img"></img>
                     </div>
                 </div>
-                <DiagBorder fillInside={Colors.main} fillOutside="white" borderColor={Colors.mainDark} />
+                <DiagBorder fillInside={Colors.main} fillOutside="white" borderColor={Colors.mainMedium} />
             </VerticalPageSection>
         </>
     )
