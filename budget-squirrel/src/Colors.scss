@@ -1,13 +1,27 @@
 $colorMain: #FAEAD6;
-$colorMainDark: #886F59;
+$colorMainMedium: #886F59;
+$colorMainDark: #7D5F4A;
+
+$colorAction: #69995D;
 
 .color {
     &-bg {
         &__main { background-color: $colorMain; }
     }
+
+    &-txt {
+        &__main {
+            color: $colorMain;
+
+            &-dark {
+                color: $colorMainDark;
+            }
+        }
+    }
 }
 
 :export {
     main: $colorMain;
+    mainMedium: $colorMainMedium;
     mainDark: $colorMainDark;
 }
