@@ -1,0 +1,14 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+.promo__img {
+    --promo-image-scale: 330px;
+    width: var(--promo-image-scale);
+    height: var(--promo-image-scale);
+
+    &__container {
+        z-index: 6;
+    }
+}

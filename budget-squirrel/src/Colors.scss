@@ -1,0 +1,13 @@
+$colorMain: #FAEAD6;
+$colorMainDark: #886F59;
+
+.color {
+    &-bg {
+        &__main { background-color: $colorMain; }
+    }
+}
+
+:export {
+    main: $colorMain;
+    mainDark: $colorMainDark;
+}
