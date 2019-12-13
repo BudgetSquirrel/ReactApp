@@ -1,0 +1,14 @@
+.vert-section {
+    position: relative;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        --inset: 110px;
+        padding-left: var(--inset);
+        padding-right: var(--inset);
+        padding-top: var(--inset);
+        padding-bottom: var(--inset);
+    }
+}
