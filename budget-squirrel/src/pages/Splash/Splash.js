@@ -27,15 +27,17 @@ export default function Splash() {
                         <img class="promo__img--small"></img>
                     </div>
                 </div>
-                <DiagBorder fillInside={Colors.main} fillOutside="white" borderColor={Colors.mainMedium} />
+                <DiagBorder fillInside={Colors.main} fillOutside={Colors.white} borderColor={Colors.mainMedium} />
             </VerticalPageSection>
+
+
 
             <VerticalPageSection isrootContainsContent={true}>
                 <div class="vert-section__column splash__section__content">
-                    <h1 class="color-txt__black">
+                    <h1>
                         Create budget goals
                     </h1>
-                    <p class="color-txt__black">
+                    <p>
                         Set budgets for custom category and track your
                         spending over time.
                     </p>
@@ -52,12 +54,41 @@ export default function Splash() {
                     <img class="promo__img"></img>
                 </div>
                 <div class="vert-section__column splash__section__content">
-                    <h1 class="color-txt__black">
+                    <h1>
                         Track your goals
                     </h1>
-                    <p class="color-txt__black">
+                    <p>
                         Create spending periods for custom categories
                         and check your performance.
+                    </p>
+                </div>
+            </VerticalPageSection>
+
+
+
+            <VerticalPageSection isrootContainsContent={true}>
+                <div class="splash__secondary-promo">
+                    <img></img>
+                    <p>100% Free to Use</p>
+                    <p>
+                        Budget Squirrel is free to use,
+                        No trials and no fees
+                    </p>
+                </div>
+                <div class="splash__secondary-promo">
+                    <img></img>
+                    <p>Budgeting on the go</p>
+                    <p>
+                        Budget Squirrel is available for
+                        both mobile and desktop
+                    </p>
+                </div>
+                <div class="splash__secondary-promo">
+                    <img></img>
+                    <p>Keep updated</p>
+                    <p>
+                        Enable email notifications to
+                        remind yourself
                     </p>
                 </div>
             </VerticalPageSection>
