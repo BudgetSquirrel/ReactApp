@@ -10,7 +10,7 @@ export default function Splash() {
     return (
         <>
             <Header></Header>
-            <VerticalPageSection isColumn={true}>
+            <VerticalPageSection>
                 <div class="vert-section__content color-bg__main">
                     <div class="vert-section__column splash__section__content--left">
                         <h1 class="color-txt__main-dark">
@@ -24,10 +24,25 @@ export default function Splash() {
                         </p>
                     </div>
                     <div class="vert-section__column splash__section__img--right promo__img__container">
-                        <img class="promo__img"></img>
+                        <img class="promo__img--small"></img>
                     </div>
                 </div>
                 <DiagBorder fillInside={Colors.main} fillOutside="white" borderColor={Colors.mainMedium} />
+            </VerticalPageSection>
+
+            <VerticalPageSection isrootContainsContent={true}>
+                <div class="vert-section__column splash__section__content--left">
+                    <h1 class="color-txt__black">
+                        Create budget goals
+                    </h1>
+                    <p class="color-txt__black">
+                        Set budgets for custom category and track your
+                        spending over time.
+                    </p>
+                </div>
+                <div class="vert-section__column splash__section__img--right promo__img__container">
+                    <img class="promo__img"></img>
+                </div>
             </VerticalPageSection>
         </>
     )
