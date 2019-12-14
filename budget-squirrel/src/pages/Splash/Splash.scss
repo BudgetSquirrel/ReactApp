@@ -12,7 +12,7 @@
 
 .splash {
     &__section__content {
-        max-width: 327px;
+        max-width: 350px;
 
         &--grow {
             max-width: initial;
@@ -20,7 +20,7 @@
         }
 
         &--no-grow {
-            max-width: 327px;
+            max-width: 350px;
         }
     }
 
@@ -28,6 +28,30 @@
         &__content {
             display: flex;
             justify-content: space-between;
+        }
+    }
+
+    &__secondary-promo {
+        width: 279px;
+
+        > p {
+            text-align: center;
+            margin-top: 0.5em;
+            margin-bottom: 0;
+
+            &:first-of-type {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 1.5em;
+            }
+        }
+
+        > img {
+            display: block;
+            height: 124px;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

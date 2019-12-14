@@ -1,7 +1,11 @@
+@import './Colors.scss';
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
     margin: 0;
     --page-side-padding: 110px;
+    color: $colorBlack;
 }
 
 .promo__img {

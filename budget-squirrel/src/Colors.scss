@@ -2,7 +2,19 @@ $colorMain: #FAEAD6;
 $colorMainMedium: #886F59;
 $colorMainDark: #7D5F4A;
 
+$colorBlack: #394648;
+$colorWhite: #FFF;
+
 $colorAction: #69995D;
+
+:export {
+    main: $colorMain;
+    mainMedium: $colorMainMedium;
+    mainDark: $colorMainDark;
+
+    black: $colorBlack;
+    white: $colorWhite;
+}
 
 .color {
     &-bg {
@@ -17,15 +29,5 @@ $colorAction: #69995D;
                 color: $colorMainDark;
             }
         }
-
-        &__black {
-            color: #394648;
-        }
     }
-}
-
-:export {
-    main: $colorMain;
-    mainMedium: $colorMainMedium;
-    mainDark: $colorMainDark;
 }
