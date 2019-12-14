@@ -5,9 +5,8 @@ body {
 }
 
 .promo__img {
-    --promo-image-scale: 330px;
-    width: var(--promo-image-scale);
-    height: var(--promo-image-scale);
+    width: 375px;
+    height: 400px;
 
     &__container {
         z-index: 6;
@@ -15,7 +14,7 @@ body {
     }
 
     &--small {
-        width: 260px;
-        height: 260px;
+        width: 314px;
+        height: 334px;
     }
 }

@@ -8,22 +8,22 @@ import Header from '../../components/Header/Header';
 
 export default function Splash() {
     return (
-        <>
+        <div class="splash">
             <Header></Header>
             <VerticalPageSection>
                 <div class="vert-section__content color-bg__main">
-                    <div class="vert-section__column splash__section__content--left">
+                    <div class="vert-section__column splash__section__content--grow">
                         <h1 class="color-txt__main-dark">
                             Budget Squirrel is a budget management tool
                             designed for both control freeks and the
                             laid back.
                         </h1>
-                        <p class="color-txt__main-dark">
+                        <p class="color-txt__main-dark splash__section__content--no-grow">
                             A budget management tool designed for both
                             control freeks and the laid back.
                         </p>
                     </div>
-                    <div class="vert-section__column splash__section__img--right promo__img__container">
+                    <div class="vert-section__column splash__section__img promo__img__container">
                         <img class="promo__img--small"></img>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ export default function Splash() {
             </VerticalPageSection>
 
             <VerticalPageSection isrootContainsContent={true}>
-                <div class="vert-section__column splash__section__content--left">
+                <div class="vert-section__column splash__section__content">
                     <h1 class="color-txt__black">
                         Create budget goals
                     </h1>
@@ -40,10 +40,27 @@ export default function Splash() {
                         spending over time.
                     </p>
                 </div>
-                <div class="vert-section__column splash__section__img--right promo__img__container">
+                <div class="vert-section__column splash__section__img promo__img__container">
                     <img class="promo__img"></img>
                 </div>
             </VerticalPageSection>
-        </>
+
+
+
+            <VerticalPageSection isrootContainsContent={true}>
+                <div class="vert-section__column splash__section__img promo__img__container">
+                    <img class="promo__img"></img>
+                </div>
+                <div class="vert-section__column splash__section__content">
+                    <h1 class="color-txt__black">
+                        Track your goals
+                    </h1>
+                    <p class="color-txt__black">
+                        Create spending periods for custom categories
+                        and check your performance.
+                    </p>
+                </div>
+            </VerticalPageSection>
+        </div>
     )
 }
