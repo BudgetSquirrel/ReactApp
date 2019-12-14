@@ -11,5 +11,11 @@ body {
 
     &__container {
         z-index: 6;
+        position: relative;
+    }
+
+    &--small {
+        width: 260px;
+        height: 260px;
     }
 }
