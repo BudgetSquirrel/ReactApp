@@ -3,13 +3,11 @@ import VerticalPageSection from '../../components/generic/VerticalPageSection/Ve
 import './Splash.scss';
 import DiagBorder from '../../components/generic/DiagBorder/DiagBorder';
 import Colors from '../../Colors.scss';
-import Header from '../../components/Header/Header';
 
 
 export default function Splash() {
     return (
         <div class="splash">
-            <Header></Header>
             <VerticalPageSection>
                 <div class="vert-section__content color-bg__main">
                     <div class="vert-section__column splash__section__content--grow">
