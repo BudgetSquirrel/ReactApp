@@ -9,7 +9,7 @@ export default function Header() {
                 <h2>Budget Squirrel</h2>
             </div>
             <div class="header__section header__section__right">
-                <button class="header__button">
+                <button to="/login" class="header__button">
                     Login
                 </button>
                 <a class="header__button" href={RouteConstants.REGISTER}>
