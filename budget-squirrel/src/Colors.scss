@@ -4,8 +4,11 @@ $colorMainDark: #7D5F4A;
 
 $colorBlack: #394648;
 $colorWhite: #FFF;
+$colorWashLight: #EEF1F1;
+$colorWashDark: #D5D7D8;
 
 $colorAction: #69995D;
+$colorActionDark: #5A8A4E;
 
 :export {
     main: $colorMain;
@@ -29,5 +32,17 @@ $colorAction: #69995D;
                 color: $colorMainDark;
             }
         }
+    }
+}
+
+.color-wash-bg {
+    &--light {
+        background-color: $colorWashLight;
+        fill: $colorWashLight;
+    }
+
+    &--dark {
+        background-color: $colorWashDark;
+        fill: $colorWashDark;
     }
 }

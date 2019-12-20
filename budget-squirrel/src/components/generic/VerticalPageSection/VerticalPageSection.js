@@ -1,7 +1,7 @@
 import React from 'react'
 import './VerticalPageSection.scss';
 
-export default function VerticalPageSection({ isrootContainsContent, extraClasses, children }) {
+export default function VerticalPageSection({ isrootContainsContent=true, extraClasses, children }) {
     function getClassNames() {
         let classNames = "vert-section";
         if (isrootContainsContent) {

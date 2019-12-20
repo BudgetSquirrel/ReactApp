@@ -54,4 +54,26 @@
             margin-right: auto;
         }
     }
+
+    &__register-section {
+        height: 453px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__register-section-background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &__register-section-background-svg {
+        height: 100%;
+        width: 100%;
+    }
 }

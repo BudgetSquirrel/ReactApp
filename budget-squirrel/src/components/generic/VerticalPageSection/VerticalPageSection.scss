@@ -11,5 +11,15 @@
         --inset: var(--page-side-padding);
         padding-top: var(--inset);
         padding-bottom: var(--inset);
+
+        &--no-side-margins {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &--no-height-padding {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
     }
 }
