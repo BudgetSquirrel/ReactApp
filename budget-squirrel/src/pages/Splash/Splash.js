@@ -8,7 +8,7 @@ import Colors from '../../Colors.scss';
 export default function Splash() {
     return (
         <div class="splash">
-            <VerticalPageSection>
+            <VerticalPageSection isrootContainsContent={false}>
                 <div class="vert-section__content color-bg__main">
                     <div class="vert-section__column splash__section__content--grow">
                         <h1 class="color-txt__main-dark">
@@ -30,7 +30,7 @@ export default function Splash() {
 
 
 
-            <VerticalPageSection isrootContainsContent={true}>
+            <VerticalPageSection>
                 <div class="vert-section__column splash__section__content">
                     <h1>
                         Create budget goals
@@ -47,7 +47,7 @@ export default function Splash() {
 
 
 
-            <VerticalPageSection isrootContainsContent={true}>
+            <VerticalPageSection>
                 <div class="vert-section__column splash__section__img promo__img__container">
                     <img class="promo__img"></img>
                 </div>
@@ -64,7 +64,7 @@ export default function Splash() {
 
 
 
-            <VerticalPageSection isrootContainsContent={true}>
+            <VerticalPageSection>
                 <div class="splash__secondary-promo">
                     <img></img>
                     <p>100% Free to Use</p>
@@ -88,6 +88,22 @@ export default function Splash() {
                         Enable email notifications to
                         remind yourself
                     </p>
+                </div>
+            </VerticalPageSection>
+
+            <VerticalPageSection isrootContainsContent={false}>
+                <div class="vert-section__content vert-section__content--no-side-margins vert-section__content--no-height-padding splash__register-section">
+                    <p class="z-1">Get nuts about your budget</p>
+                    <a class="button button--primary button--wide z-1">Register</a>
+                </div>
+                <div class="splash__register-section-background">
+                    <svg class="splash__register-section-background-svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 100 40"
+                        preserveAspectRatio="none">
+                        <polygon class="color-wash-bg--dark" points="0 30, 100 10, 100 40, 0 40" />
+                        <polygon class="color-wash-bg--light" points="0 5, 100 20, 100 40, 0 40" />
+                    </svg>
                 </div>
             </VerticalPageSection>
         </div>
