@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.scss';
+import RouteConstants from '../../RouteConstants';
 
 export default function Header() {
     return (
@@ -11,9 +12,9 @@ export default function Header() {
                 <button class="header__button">
                     Login
                 </button>
-                <button class="header__button">
+                <a class="header__button" href={RouteConstants.REGISTER}>
                     Sign Up
-                </button>
+                </a>
             </div>
         </header>
     )

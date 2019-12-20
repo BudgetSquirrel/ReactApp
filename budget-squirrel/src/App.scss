@@ -1,5 +1,6 @@
 @import './Colors.scss';
 @import './Z-Indexes.scss';
+@import './Spacing.scss';
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -76,6 +77,8 @@ body {
     padding: 15px;
     font-size: inherit;
     text-align: center;
+    display: block;
+    text-decoration: none;
 
     &:hover {
         cursor: pointer;

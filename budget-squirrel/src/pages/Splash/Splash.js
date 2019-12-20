@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { Children } from 'react'
 import VerticalPageSection from '../../components/generic/VerticalPageSection/VerticalPageSection'
 import './Splash.scss';
 import DiagBorder from '../../components/generic/DiagBorder/DiagBorder';
+import RouteConstants from '../../RouteConstants';
 import Colors from '../../Colors.scss';
 
 
 export default function Splash() {
+    function RegisterButton({ extraClasses, children }) {
+        let classes = "button button--primary button--wide";
+        if (extraClasses) classes += ` ${extraClasses}`;
+        return (
+            <a class={classes} href={RouteConstants.REGISTER}>{children}</a>
+        )
+    }
+
     return (
         <div class="splash">
             <VerticalPageSection isrootContainsContent={false}>
                 <div class="vert-section__content color-bg__main">
-                    <div class="vert-section__column splash__section__content--grow">
+                    <div class="vert-section__column splash__section__content--grow z-6">
                         <h1 class="color-txt__main-dark">
                             Budget Squirrel is a budget management tool
                             designed for both control freeks and the
@@ -20,6 +29,7 @@ export default function Splash() {
                             A budget management tool designed for both
                             control freeks and the laid back.
                         </p>
+                        <RegisterButton extraClasses={"mt-30p"}>Sign Up</RegisterButton>
                     </div>
                     <div class="vert-section__column splash__section__img promo__img__container">
                         <img class="promo__img--small"></img>
@@ -39,6 +49,7 @@ export default function Splash() {
                         Set budgets for custom category and track your
                         spending over time.
                     </p>
+                    <RegisterButton extraClasses={"mt-2em"}>Sign Up</RegisterButton>
                 </div>
                 <div class="vert-section__column splash__section__img promo__img__container">
                     <img class="promo__img"></img>
@@ -59,6 +70,7 @@ export default function Splash() {
                         Create spending periods for custom categories
                         and check your performance.
                     </p>
+                    <RegisterButton extraClasses={"mt-2em"}>Sign Up</RegisterButton>
                 </div>
             </VerticalPageSection>
 
@@ -94,7 +106,7 @@ export default function Splash() {
             <VerticalPageSection isrootContainsContent={false}>
                 <div class="vert-section__content vert-section__content--no-side-margins vert-section__content--no-height-padding splash__register-section">
                     <p class="z-1">Get nuts about your budget</p>
-                    <a class="button button--primary button--wide z-1">Register</a>
+                    <RegisterButton extraClasses={"z-1"}>Get Started</RegisterButton>
                 </div>
                 <div class="splash__register-section-background">
                     <svg class="splash__register-section-background-svg"
