@@ -5,7 +5,6 @@ import Splash from './pages/Splash/Splash';
 import Login from './pages/Login/Login'
 import Layout from './Layout/Layout';
 import Register from './pages/Register/Register';
-
 import './App.scss';
 import './Colors.scss';
 
