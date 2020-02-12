@@ -4,31 +4,18 @@ import BasicForm from '../../components/generic/BasicForm/BasicForm';
 import PasswordInput from '../../controls/PasswordInput/PasswordInput';
 import BasicCheckbox from '../../components/generic/BasicCheckbox/BasicCheckbox';
 import axios from 'axios';
+import BudgetService from '../../services/budget-service';
+import BackendClient from '../../infrastructure/backend-client';
 
 export default function Login() {
 
     function login() {
-        axios({
-            method: "post",
-            url: "/api/auth/authenticate",
-            data: {
-                username: "user1",
-                password: "user1234"
-            }
-        }).then(function(response) {
-            console.log(response);
-            let jwtToken = response.data;
-            axios({
-                method: "post",
-                url: "/api/budget/roots",
-                data: {},
-                headers: {
-                    Authorization: `Bearer ${jwtToken}`
-                }
-            }).then(function(response2) {
-                console.log("Hi!");
-                console.log(response2);
-                
+        let backendClient = new BackendClient();
+        let budgetService = new BudgetService(backendClient, "budget");
+        
+        backendClient.authenticate("user1", "user1234").then(() => {
+            let budgets = budgetService.getRootBudgets().then(bs => {
+                console.log(bs);
             });
         });
     }
