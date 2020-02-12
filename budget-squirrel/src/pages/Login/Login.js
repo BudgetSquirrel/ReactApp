@@ -3,8 +3,36 @@ import './Login.scss'
 import BasicForm from '../../components/generic/BasicForm/BasicForm';
 import PasswordInput from '../../controls/PasswordInput/PasswordInput';
 import BasicCheckbox from '../../components/generic/BasicCheckbox/BasicCheckbox';
+import axios from 'axios';
 
 export default function Login() {
+
+    function login() {
+        axios({
+            method: "post",
+            url: "/api/auth/authenticate",
+            data: {
+                username: "user1",
+                password: "user1234"
+            }
+        }).then(function(response) {
+            console.log(response);
+            let jwtToken = response.data;
+            axios({
+                method: "post",
+                url: "/api/budget/roots",
+                data: {},
+                headers: {
+                    Authorization: `Bearer ${jwtToken}`
+                }
+            }).then(function(response2) {
+                console.log("Hi!");
+                console.log(response2);
+                
+            });
+        });
+    }
+    login();
 
     const title = "Login";
 
