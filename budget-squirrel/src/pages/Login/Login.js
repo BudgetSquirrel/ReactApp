@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Login.scss'
 import BasicForm from '../../components/generic/BasicForm/BasicForm';
 import PasswordInput from '../../controls/PasswordInput/PasswordInput';
@@ -6,13 +6,14 @@ import BasicCheckbox from '../../components/generic/BasicCheckbox/BasicCheckbox'
 import axios from 'axios';
 import BudgetService from '../../services/budget-service';
 import BackendClient from '../../infrastructure/backend-client';
+import { ServiceContext } from '../../dependency-injection/service-context';
 
 export default function Login() {
+    const services = useContext(ServiceContext);
+    const backendClient = services.backendClient;
+    const budgetService = services.budgetService;
 
     function login() {
-        let backendClient = new BackendClient();
-        let budgetService = new BudgetService(backendClient, "budget");
-        
         backendClient.authenticate("user1", "user1234").then(() => {
             let budgets = budgetService.getRootBudgets().then(bs => {
                 console.log(bs);

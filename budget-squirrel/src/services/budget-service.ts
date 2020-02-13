@@ -4,7 +4,7 @@ export default class BudgetService {
     _client: BackendClient;
     _budgetApiEndpoint: string;
 
-    constructor(client: BackendClient, apiEndpoint: string) {
+    constructor(client: BackendClient, apiEndpoint: string = "budget") {
         this._client = client;
         this._budgetApiEndpoint = apiEndpoint;
     }
