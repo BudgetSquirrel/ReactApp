@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import './Login.scss'
 import { useHistory } from 'react-router-dom';
 import BasicForm from '../../components/generic/BasicForm/BasicForm';
@@ -17,12 +17,30 @@ export default function Login() {
     const usernameRef = useRef();
     const passwordRef = useRef();
 
+    const [usernameError, setUsernameError] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
+
     function onLoginClicked() {
         const password = passwordRef.current.value
         const username = usernameRef.current.value
-        authService.login(username, password).then(function() {
+        authService.login(username, password).then(response => {
             history.push(RouteConstants.BUDGET);
+        }).catch(e => {
+            setUsernameError(false);
+            setPasswordError(false);
+            
+            if (e.message === "USER_NOT_FOUND")
+                setUsernameError(true);
+            else if (e.message === "WRONG_PASSWORD")
+                setPasswordError(true);
         });
+    }
+
+    function getUsernameInputClass() {
+        let classNames = "input";
+        if (usernameError)
+            classNames = `${classNames} input--invalid`;
+        return classNames;
     }
 
     const title = "Login";
@@ -30,8 +48,8 @@ export default function Login() {
     function LoginInput() {
         return (
             <>
-                <input class="input" type="text" ref={usernameRef} placeholder="Username" />
-                <PasswordInput valueRef={passwordRef} />                
+                <input class={getUsernameInputClass()} type="text" ref={usernameRef} placeholder="Username" />
+                <PasswordInput valueRef={passwordRef} isValid={!passwordError} />                
                 <BasicCheckbox title="Remember Me"/>            
             </>
         )

@@ -32,15 +32,24 @@ export default class BackendClient {
 
     async authenticate(username:string, password:string): Promise<User | null> {
         let user: User | null = null;
+        let error: string | null = null;
         await axios({
             method: "post",
             url: this._urlForEndpoint("auth/authenticate"),
             data: { username, password }
         }).then(response => {
+            if (response.data.error) {
+                error = response.data.error;
+                return;
+            }
+
             this._authToken = response.data.token;
             this._authExpiration = new Date(response.data.expires);
             user = response.data.user;
         });
+
+        if (error) throw new Error(error);
+
         return user;
     }
 
