@@ -1,4 +1,5 @@
 import axios from 'axios';
+import User from '../ViewModels/user';
 
 interface ApiRequest {
     arguments?: any;
@@ -8,9 +9,11 @@ export default class BackendClient {
     _apiRoot: string;
 
     _authToken?: string;
+    _authExpiration: Date | null;
 
     constructor(apiRoot: string = "/api") {
         this._apiRoot = apiRoot;
+        this._authExpiration = null;
     }
 
     async request(endpoint: string, request: ApiRequest = {}) {
@@ -27,14 +30,18 @@ export default class BackendClient {
         return response;
     }
 
-    async authenticate(username:string, password:string) {
-        let tokenResponse = await axios({
+    async authenticate(username:string, password:string): Promise<User | null> {
+        let user: User | null = null;
+        await axios({
             method: "post",
             url: this._urlForEndpoint("auth/authenticate"),
             data: { username, password }
         }).then(response => {
-            this._authToken = response.data;
+            this._authToken = response.data.token;
+            this._authExpiration = new Date(response.data.expires);
+            user = response.data.user;
         });
+        return user;
     }
 
     _urlForEndpoint(endpoint: string) {

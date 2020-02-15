@@ -9,15 +9,15 @@ import './App.scss';
 import './Colors.scss';
 import BudgetService from './services/budget-service';
 import BackendClient from './infrastructure/backend-client';
+import Budget from './pages/Budgets/Budget';
 
 function App() {
   return (
     <Router>
-        <Layout>
-            <Route exact={true} path={RouteConstants.ROOT} component={Splash} />
-            <Route path={RouteConstants.REGISTER} component={Register} />
-            <Route path={RouteConstants.LOGIN} component={Login} />
-        </Layout>
+        <Route exact={true} path={RouteConstants.ROOT} component={Splash} />
+        <Route path={RouteConstants.REGISTER} component={Register} />
+        <Route path={RouteConstants.LOGIN} component={Login} />
+        <Route path={RouteConstants.BUDGET} component={Budget} />
     </Router>
   );
 }

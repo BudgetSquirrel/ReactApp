@@ -2,6 +2,7 @@ import React from 'react';
 import './Register.scss';
 import PasswordInput from '../../controls/PasswordInput/PasswordInput';
 import BasicForm from '../../components/generic/BasicForm/BasicForm';
+import Layout from '../../Layout/Layout';
 
 export default function Register() {
     const title = "Register your account";
@@ -30,11 +31,13 @@ export default function Register() {
     const buttons = <RegisterButtons />
 
     return (
-        <div class="register">
-            <BasicForm title={title} description={description}>
-                <RegisterInputs key="inputs" />
-                <RegisterButtons key="buttons" />
-            </BasicForm>
-        </div>
+        <Layout>
+            <div class="register">
+                <BasicForm title={title} description={description}>
+                    <RegisterInputs key="inputs" />
+                    <RegisterButtons key="buttons" />
+                </BasicForm>
+            </div>
+        </Layout>
     )
 }

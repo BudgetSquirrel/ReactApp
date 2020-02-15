@@ -1,5 +1,6 @@
 export default {
     ROOT: "/",
     REGISTER: "/register",
-    LOGIN: "/login"
+    LOGIN: "/login",
+    BUDGET: "/budget",
 }
