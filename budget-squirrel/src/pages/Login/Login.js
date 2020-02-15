@@ -1,46 +1,30 @@
-import React from 'react'
+import React, { useContext, useRef } from 'react'
 import './Login.scss'
 import BasicForm from '../../components/generic/BasicForm/BasicForm';
 import PasswordInput from '../../controls/PasswordInput/PasswordInput';
 import BasicCheckbox from '../../components/generic/BasicCheckbox/BasicCheckbox';
-import axios from 'axios';
+import { ServiceContext } from '../../dependency-injection/service-context';
 
 export default function Login() {
+    const services = useContext(ServiceContext);
+    const authService = services.authService;
 
-    function login() {
-        axios({
-            method: "post",
-            url: "/api/auth/authenticate",
-            data: {
-                username: "user1",
-                password: "user1234"
-            }
-        }).then(function(response) {
-            console.log(response);
-            let jwtToken = response.data;
-            axios({
-                method: "post",
-                url: "/api/budget/roots",
-                data: {},
-                headers: {
-                    Authorization: `Bearer ${jwtToken}`
-                }
-            }).then(function(response2) {
-                console.log("Hi!");
-                console.log(response2);
-                
-            });
-        });
+    const usernameRef = useRef();
+    const passwordRef = useRef();
+
+    function onLoginClicked() {
+        const password = passwordRef.current.value
+        const username = usernameRef.current.value
+        authService.login(username, password);
     }
-    login();
 
     const title = "Login";
 
     function LoginInput() {
         return (
             <>
-                <input class="input" type="text" placeholder="Username" />
-                <PasswordInput />                
+                <input class="input" type="text" ref={usernameRef} placeholder="Username" />
+                <PasswordInput valueRef={passwordRef} />                
                 <BasicCheckbox title="Remember Me"/>            
             </>
         )
@@ -49,7 +33,7 @@ export default function Login() {
     function LoginButton() {
         return (
             <>
-                <button class="button button--wide">Login</button>
+                <button onClick={onLoginClicked} class="button button--wide">Login</button>
             </>
         )
     }

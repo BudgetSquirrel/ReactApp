@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import RouteConstants from './RouteConstants';
 import Splash from './pages/Splash/Splash';
@@ -7,6 +7,8 @@ import Layout from './Layout/Layout';
 import Register from './pages/Register/Register';
 import './App.scss';
 import './Colors.scss';
+import BudgetService from './services/budget-service';
+import BackendClient from './infrastructure/backend-client';
 
 function App() {
   return (
